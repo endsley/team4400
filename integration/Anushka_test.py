@@ -8,7 +8,7 @@ if __name__ == "__main__":
         def display_problem():
             display_color_problem_title()
             [random_addon, random_coefficient, power, random_lower, random_upper] = retrieve_display_variables()
-            display_new_line(r''' What is the integral value of $\int^{%d}_{%d} %dx^%d + %d dx$''', 
+            display_new_line(r''' What is the integral value of $\int^{%d}_{%d} %dx^%d + %d$ $dx$''', 
                              (random_upper, random_lower, random_coefficient, power, random_addon))
 
 
@@ -16,13 +16,14 @@ if __name__ == "__main__":
             display_problem()
             params = display_solutions()
         else:
-            [random_addon, random_coefficient, power] = getMultInts(3, 2, 5)
-            [random_lower] = getMultInts(1, 0, 5)
-            [random_upper] = getMultInts(1, random_lower + 1, 10)
+            [random_addon, random_coefficient, power, random_lower] = getMultInts(4, 1, 3)
+            random_upper = random_lower + random_lower + 1
+            st.write(random_lower)
+            st.write(random_upper)
             set_page_variables_for_display([random_addon, random_coefficient, power, random_lower, random_upper])
             display_problem()
             def anti_derivative(x):
-                return random_coefficient * (1 / (power + 1)) * x**(random_coefficient + 1) + random_coefficient
+                return random_coefficient * (1 / (power + 1)) * x**(power + 1) + random_addon*x
             def solve_anti_deriv():
                 return anti_derivative(random_upper) - anti_derivative(random_lower)
             solution = solve_anti_deriv()
