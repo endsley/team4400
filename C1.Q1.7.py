@@ -7,19 +7,29 @@ if __name__ == "__main__":
     def display():
         def display_problem():
             display_color_problem_title()
-            [random_addon, random_coefficient, power, random_lower, random_upper] = retrieve_display_variables()
-            display_new_line(r''' What is the integral value of $\int^{%d}_{%d} %dx^%d + %d$ $dx$''', 
-                             (random_upper, random_lower, random_coefficient, power, random_addon))
+            [random1_val1, random1_val2, random1_val3, random2_val1, random2_val2, random3_val3] = retrieve_display_variables()
+            display_new_line(r''' Given \\ 
+\begin{equation*}
+  x = \begin{bmatrix}
+    %d \\
+    %d\\
+    %d
+\end{bmatrix},   
+  y = \begin{bmatrix}
+    %d \\
+    %d \\
+    %d
+\end{bmatrix},   
+\end{equation*}
+Calculate the following: $\langle y, x \rangle$''', 
+                             (random1_val1, random1_val2, random1_val3, random2_val1, random2_val2, random3_val3))
 
 
         if problem_has_been_answered():
             display_problem()
             params = display_solutions()
         else:
-            [random_addon, random_coefficient, power, random_lower] = getMultInts(4, 1, 3)
-            random_upper = random_lower + random_lower + 1
-            st.write(random_lower)
-            st.write(random_upper)
+            [random1_val1, random1_val2, random1_val3, random2_val1, random2_val2, random3_val3] = getMultInts(6, 1, 3)
             set_page_variables_for_display([random_addon, random_coefficient, power, random_lower, random_upper])
             display_problem()
             def anti_derivative(x):
