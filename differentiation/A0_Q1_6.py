@@ -9,7 +9,7 @@ if __name__ == "__main__":
         def display_problem():
             display_color_problem_title()
             [random_x, x_expon,rand_const] = retrieve_display_variables()
-            display_new_line(r''' What is the derivative value of $f(x) = log((x-%d)^{%d}) $ when $x = %d $''', (rand_const,x_expon, random_x))
+            display_new_line(r''' What is the derivative value of $f(x) = log_2((x-%d)^{%d}) $ when $x = %d $''', (rand_const,x_expon, random_x))
 
 
         if problem_has_been_answered():
