@@ -36,5 +36,4 @@ if __name__ == "__main__":
 
         return params
 
-
     standard_problem_page(n_sec, display)
