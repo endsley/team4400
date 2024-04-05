@@ -8,7 +8,6 @@ if __name__ == "__main__":
         # Generates a matrix with random integers of the specified size
         return np.random.randint(min_val, max_val + 1, size=(rows, cols))
 
-
     def display_matrix_question():
 
 
@@ -22,8 +21,6 @@ if __name__ == "__main__":
                 matrix = matrix[:, None]  # Convert 1D array to column vector
             return r'\begin{bmatrix}' + r' \\ '.join(
                 ' & '.join(str(cell) for cell in row) for row in matrix) + r'\end{bmatrix}'
-
-
 
         def display_problem(x, y):
             # Convert numpy arrays to LaTeX bmatrix format.
@@ -45,13 +42,13 @@ if __name__ == "__main__":
         else:
             [random1_val1, random1_val2, random1_val3, random2_val1, random2_val2, random2_val3] = getMultInts(6, 1, 3)
             set_page_variables_for_display([random1_val1, random1_val2, random1_val3, random2_val1, random2_val2, random2_val3])
-            display_problem(x, y)
             x = np.array([[random1_val1],
                           [random1_val2],
                           [random1_val3]])
             y = np.array([[random2_val1],
                           [random2_val2],
                           [random2_val3]])
+            display_problem(x, y)
             
             def inner_product(x, y):
                 return y.T.dot(x)
@@ -65,4 +62,3 @@ if __name__ == "__main__":
         return params
 
     standard_problem_page(n_sec, display_matrix_question)
-
