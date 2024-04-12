@@ -8,7 +8,7 @@ if __name__ == "__main__":
     def display():
         def display_problem():
             display_color_problem_title()
-            (sample_1, sample_2, sample_3 ) = retrieve_display_variables()
+            [(x_00, x_01, y_00, y_01, y_10, y_11,z_00, z_01)] = retrieve_display_variables()
             display_new_line(
                 r'''
                 Given X = \begin{bmatrix}
@@ -27,20 +27,16 @@ if __name__ == "__main__":
                 
                 $XYZ^{\top}$ = $a$. 
                  ''',
-                (sample_1, sample_2, sample_3))
+                [x_00, x_01, y_00, y_01, y_10, y_11,z_00, z_01])
 
 
         if problem_has_been_answered():
             display_problem()
             params = display_solutions()
         else:
-            [x_00, x_01] = getMultInts(4, -4, 4)
-            [y_00, y_01, y_10, y_11] = getMultInts(4, -4, 4)
-            [z_00, z_01] = getMultInts(4, -4, 4)
 
-            set_page_variables_for_display([x_00, x_01])
-            set_page_variables_for_display([y_00, y_01, y_10, y_11])
-            set_page_variables_for_display([z_00, z_01])
+            [x_00, x_01, y_00, y_01, y_10, y_11,z_00, z_01] = getMultInts(8, -4, 4)
+            set_page_variables_for_display([x_00, x_01, y_00, y_01, y_10, y_11,z_00, z_01])
             display_problem()
             def product(x,y,z):
                 return np.dot(np.dot(x, y), z.T)
