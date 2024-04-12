@@ -9,8 +9,7 @@ if __name__ == "__main__":
         def display_problem():
             display_color_problem_title()
             [random_x, x_expon] = retrieve_display_variables()
-            display_new_line(r''' What is the derivative value of $f(x) = log(1/{x}^{%d}) $ when $x = %d $''', (x_expon, random_x))
-
+            display_new_line(r''' What is the derivative value of $f(x) = \log_2\left(\frac{1}{x^{%d}}\right)\ $ when $x = %d $''', (x_expon, random_x))
 
         if problem_has_been_answered():
             display_problem()
