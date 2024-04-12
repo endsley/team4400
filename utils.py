@@ -27,6 +27,8 @@ import pandas as pd
 from copy import deepcopy
 from sklearn.preprocessing import normalize
 from sympy import *
+from IPython.display import display, Latex
+
 
 #from streamlit_js_eval import get_page_location
 
