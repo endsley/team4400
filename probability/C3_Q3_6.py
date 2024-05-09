@@ -18,7 +18,7 @@ if __name__ == "__main__":
                 r'''Given the probability table below where $X$ represents the probability of you having a good or bad date and $Y$ represents the potential topics you could talk about during a date.''')
             st.write(v1)
 
-            display_new_line(f'What is the probability you have a good date given you talk about your ex the whole time? Solve this problem {L} Round your answer to the nearest second decimal place.')
+            display_new_line(f'What is the probability you have a good date given you talk about the weather? Solve this problem {L} Round your answer to the nearest second decimal place.')
 
         if problem_has_been_answered():
             display_problem()
@@ -40,7 +40,7 @@ if __name__ == "__main__":
             display_problem()
 
             # define the solution
-            solution = np.round(v1.iloc[3]['x=good']/v1['x=good'].sum(), 2)
+            solution = np.round(v1.iloc[3]['x=good']/v1.loc['y=weather'].sum(), 2)
             params = problem_display_ending(solution, 'number')
 
             if 'preview' in st.session_state and st.session_state['preview'] == 1:
