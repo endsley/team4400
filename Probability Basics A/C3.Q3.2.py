@@ -9,7 +9,7 @@ if __name__ == "__main__":
 
     def display():
         def display_problem(v1, L):
-            display_color_problem_title()  # Assuming it sets the title with a specific style
+            display_color_problem_title() 
 
             # Display description and the table
             display_new_line(
