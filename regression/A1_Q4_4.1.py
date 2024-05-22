@@ -18,20 +18,31 @@ if __name__ == "__main__":
             display_new_line(
                 r''' 
                 $\begin{bmatrix}
-                x_{1} & x_{2} \\
-                %d & %d \\
-                %d & %d \\
-                %d & %d \\
-                %d & %d
+                    x & y \\
+                    1 & 1 \\
+                    2 & 1 \\
+                    1.5 & 0 \\
+                    3 & 2 \\
                 \end{bmatrix}$
                 ''',
                 (x00, x01, x10, x11, x20, x21, x30, x31)
             )
             display_new_line(
                 r''' 
-                Transform the data using the feature map: $\phi_{5}(x)= x_{2}^2$. 
-                What is the first element in $\phi_{5}(x)$?
+                Assume that the function is a parabola where 
+                $\begin{equation*}
+                f(x) = a x^2 + b x + c.
+                \end{equation*}$
                 '''
+            )
+            display_new_line(
+                r'''
+                Given the initial values for GD as $a_0 = 1, b_0 = 1, c_0 = 1$, and step size $\eta=0.1$.
+                $\begin{enumerate}
+                \item What is $a, b $ or $c$ after 1 GD step?
+                \end{enumerate}$
+                '''
+
             )
 
         if problem_has_been_answered():
@@ -45,7 +56,7 @@ if __name__ == "__main__":
             display_problem()
 
             # calculate the estimated solution
-            solution = x00
+            solution = x01 ###Have to change this to reflect it being a b or c
             params = problem_display_ending(solution, 'number')
 
             if 'preview' in st.session_state and st.session_state['preview'] == 1:
