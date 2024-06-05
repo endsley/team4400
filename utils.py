@@ -27,6 +27,8 @@ import pandas as pd
 from copy import deepcopy
 from sklearn.preprocessing import normalize
 from sympy import *
+from IPython.display import display, Latex
+
 
 #from streamlit_js_eval import get_page_location
 
@@ -362,6 +364,7 @@ def problem_set_page_properly_initialized():
 	module = inspect.getmodule(frame[0])
 	key = module.__file__.strip('.py').split('/')[-1]
 
+#	print(st.session_state['prob_num'], probList[0]['fname'], key)
 	if probList[currentID]['fname'] != key:
 		st.markdown(r''' ## Error: This is a web app, you cannot press the back button !!! Please log in again.''')
 		st.stop()
